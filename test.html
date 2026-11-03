@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <!-- Навигация по неделям -->
+        <div class="week-nav">
+            <button id="prevWeek" class="nav-btn" title="Предыдущая неделя">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="week-info">
+                <div class="date-range" id="dateRange">Загрузка...</div>
+                <div class="current-week-label" id="currentWeekLabel"></div>
+            </div>
+
+            <button id="nextWeek" class="nav-btn" title="Следующая неделя">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Управление видом -->
+        <div class="week-controls">
+            <button id="goToday" class="control-btn">Сегодня</button>
+            <input type="date" id="datePicker" class="hidden-date-input">
+        </div>
+
+        <div class="week-type" id="weekTypeDisplay"></div>
+    </header>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+            <tr>
+                <th>День</th>
+                <th>09:00</th>
+                <th>10:30</th>
+                <th>12:00</th>
+            </tr>
+            </thead>
+            <tbody id="scheduleBody"></tbody>
+        </table>
+    </div>
+
+    <section class="warning-section">
+        <h2>ПРЕДУПРЕЖДЕНИЯ</h2>
+        <div id="warningsContainer">Загрузка...</div>
+    </section>
+</div>
+
+<!-- Диалог ДЗ -->
+<dialog id="homeworkDialog">
+    <h3 id="dialogTitle">Домашнее задание</h3>
+    <textarea id="homeworkInput" placeholder="Напиши домашнее задание..."></textarea>
+    <div class="dialog-buttons">
+        <button id="saveHomework" class="save">Сохранить</button>
+        <button id="deleteHomework" class="delete">Удалить</button>
+        <button id="closeHomeworkDialog" class="cancel">Закрыть</button>
+    </div>
+</dialog>
+
+<!-- Диалог Предупреждений -->
+<dialog id="warningDialog">
+    <h3>Новое предупреждение</h3>
+    <input type="text" id="studentNameInput" placeholder="Имя ученика (например: Ученик 1)">
+    <textarea id="warningInput" placeholder="Текст предупреждения..."></textarea>
+    <div class="dialog-buttons">
+        <button id="saveWarning" class="save">Сохранить</button>
+        <button id="closeWarningDialog" class="cancel">Закрыть</button>
+    </div>
+</dialog>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
