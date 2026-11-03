@@ -76,7 +76,7 @@ function getMondayOfWeek(date) {
 }
 
 function isUpperWeek(date) {
-    const anchor = new Date(2026, 8, 15);
+    const anchor = new Date(2026, 8, 14);
     const current = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     anchor.setHours(0, 0, 0, 0); current.setHours(0, 0, 0, 0);
     return Math.floor((current - anchor) / (1000 * 60 * 60 * 24 * 7)) % 2 === 0;
